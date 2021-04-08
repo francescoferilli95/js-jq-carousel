@@ -22,6 +22,24 @@ $(document).ready(function(){
         nextPrevSlide('prev');
     });
 
+    // EVENTS ON KEYBOARD
+    $(document).keydown(function(e){
+
+        // console.log(e);
+        // console.log(e.keyCode);
+        
+        // CHECK FOR PREV SLIDE
+        if(e.keyCode == 37){
+            nextPrevSlide('prev');
+        }
+        //CHECK FOR NEXT SLIDE
+        else if(e.keyCode == 39){
+            nextPrevSlide('next');
+        }
+    });
+
+
+
     //END OF DOCUMENT READY
 });
 
