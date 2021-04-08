@@ -33,31 +33,39 @@ $(document).ready(function(){
  ****************************************/
 
 function nextPrevSlide(direction) {
+
     // ACTIVE SLIDE
     var activeSlide = $('.images img.active');
-
+    // ACTIVE CIRCLE
+    var activeCircle = $('.nav i.active');
+    
     // RESET
     activeSlide.removeClass('active');
+    activeCircle.removeClass('active');
 
     // DIRECTION NEXT
     if(direction === 'next'){
 
-        // CHECK IF LAST SLIDE IS REACHED TO START AGAIN FROM THE BEGINNING
+        // CHECK IF LAST SLIDE && LAST CIRCLE IS REACHED TO START AGAIN FROM THE BEGINNING
         if(activeSlide.hasClass('last')) {
             $('.images img.first').addClass('active');
+            $('.nav i.first').addClass('active');
         }
 
         activeSlide.next('img').addClass('active');
+        activeCircle.next('i').addClass('active');
     } 
-    
+
     // DIRECTION PREV
     else if(direction === 'prev') {
 
-        // CHECK IF FIRST SLIDE IS REACHED TO START AGAIN FROM THE END
+        // CHECK IF FIRST SLIDE && CIRCLE IS REACHED TO START AGAIN FROM THE END
         if (activeSlide.hasClass('first')) {
             $('.images img.last').addClass('active');
+            $('.nav i.last').addClass('active');
         }
 
         activeSlide.prev('img').addClass('active');
+        activeCircle.prev('i').addClass('active');
     }
 }
